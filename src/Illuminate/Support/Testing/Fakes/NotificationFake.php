@@ -341,7 +341,13 @@ class NotificationFake implements Fake, NotificationDispatcher, NotificationFact
         }
     }
 
-    public function getKeyFromNotifiable($notifiable): mixed
+    /**
+     * Attempt get key when key is Stringable
+     *
+     * @param $notifiable
+     * @return mixed
+     */
+    private function getKeyFromNotifiable($notifiable): mixed
     {
         $key = $notifiable->getKey();
 
